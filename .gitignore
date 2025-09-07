@@ -1,0 +1,52 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_export_environment.sh
+
+# Generated files
+generated_plugin_registrant.dart
+
+# Android
+android/.gradle/
+android/app/debug.keystore
+android/app/profile.keystore
+android/app/release.keystore
+android/local.properties
+*.iml
+
+# iOS
+ios/Pods/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner.xcworkspace
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# Web
+/web/main.dart.js
+/web/flutter_service_worker.js
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+*.hprof
+
+# VS Code
+.vscode/
+
+# Firebase files (optional, if you don't want to commit secrets)
+google-services.json
+GoogleService-Info.plist
+
+# Misc
+*.log
+*.lock
+.DS_Store
