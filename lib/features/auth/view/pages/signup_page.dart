@@ -5,19 +5,20 @@ import 'package:client/features/auth/view/widgets/auth_gradient_btn.dart'
     as auth_gradient_btn;
 import 'package:client/features/auth/view/widgets/custom_field.dart'
     as custom_field;
+import 'package:client/features/auth/viewmodel/auth_viewmodel.dart'
+    as auth_viewmodel;
 import 'package:flutter/material.dart' as material;
-import 'package:client/features/auth/repositories/auth_remote_repository.dart'
-    as auth_remote_repository;
 import 'package:flutter/widgets.dart' as widgets;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignupPage extends material.StatefulWidget {
+class SignupPage extends ConsumerStatefulWidget {
   const SignupPage({super.key});
 
   @override
-  material.State<SignupPage> createState() => _SignupPageState();
+  ConsumerState<SignupPage> createState() => _SignupPageState();
 }
 
-class _SignupPageState extends material.State<SignupPage> {
+class _SignupPageState extends ConsumerState<SignupPage> {
   final nameController = material.TextEditingController();
   final emailController = material.TextEditingController();
   final passwordController = material.TextEditingController();
@@ -69,11 +70,15 @@ class _SignupPageState extends material.State<SignupPage> {
               auth_gradient_btn.AuthGradientBtn(
                 buttonText: 'Sign Up',
                 onTap: () async {
-                  await auth_remote_repository.AuthRemoteRepository.signup(
-                    email: emailController.text,
-                    password: passwordController.text,
-                    name: nameController.text,
-                  );
+                  if (formKey.currentState!.validate()) {
+                    await ref
+                        .read(auth_viewmodel.authViewModelProvider.notifier)
+                        .signupUser(
+                          name: nameController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                        );
+                  }
                 },
               ),
               const material.SizedBox(height: 15),

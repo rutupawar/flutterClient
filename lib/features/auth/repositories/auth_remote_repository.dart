@@ -33,7 +33,7 @@ class AuthRemoteRepository {
     }
   }
 
-  static Future<fp.Either<AppFailure, UserMd>> signup({
+  Future<fp.Either<AppFailure, UserMd>> signup({
     required String name,
     required String email,
     required String password,
