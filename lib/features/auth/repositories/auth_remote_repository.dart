@@ -2,9 +2,17 @@ import 'package:client/features/auth/model/failures/failure.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:fpdart/fpdart.dart' as fp;
 import 'package:client/features/auth/model/user_md.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'auth_remote_repository.g.dart';
+
+@riverpod
+AuthRemoteRepository authRemoteRepository(Ref ref) {
+  return AuthRemoteRepository();
+}
 
 class AuthRemoteRepository {
-  static Future<fp.Either<AppFailure, UserMd>> login({
+  Future<fp.Either<AppFailure, UserMd>> login({
     required String email,
     required String password,
   }) async {
