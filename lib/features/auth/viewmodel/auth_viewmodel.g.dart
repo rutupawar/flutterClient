@@ -13,7 +13,7 @@ part of 'auth_viewmodel.dart';
 const authViewModelProvider = AuthViewModelProvider._();
 
 final class AuthViewModelProvider
-    extends $NotifierProvider<AuthViewModel, AsyncValue<UserMd>?> {
+    extends $NotifierProvider<AuthViewModel, AsyncValue<user_md.UserMd>?> {
   const AuthViewModelProvider._()
     : super(
         from: null,
@@ -33,28 +33,33 @@ final class AuthViewModelProvider
   AuthViewModel create() => AuthViewModel();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(AsyncValue<UserMd>? value) {
+  Override overrideWithValue(AsyncValue<user_md.UserMd>? value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<AsyncValue<UserMd>?>(value),
+      providerOverride: $SyncValueProvider<AsyncValue<user_md.UserMd>?>(value),
     );
   }
 }
 
-String _$authViewModelHash() => r'87e37db505ff672234a5e5db2cecc3e9a22a2eb0';
+String _$authViewModelHash() => r'02ec5733aa062b3bf5cde97ac4d7edeedcef6a64';
 
-abstract class _$AuthViewModel extends $Notifier<AsyncValue<UserMd>?> {
-  AsyncValue<UserMd>? build();
+abstract class _$AuthViewModel extends $Notifier<AsyncValue<user_md.UserMd>?> {
+  AsyncValue<user_md.UserMd>? build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<AsyncValue<UserMd>?, AsyncValue<UserMd>?>;
+    final ref =
+        this.ref
+            as $Ref<AsyncValue<user_md.UserMd>?, AsyncValue<user_md.UserMd>?>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<AsyncValue<UserMd>?, AsyncValue<UserMd>?>,
-              AsyncValue<UserMd>?,
+              AnyNotifier<
+                AsyncValue<user_md.UserMd>?,
+                AsyncValue<user_md.UserMd>?
+              >,
+              AsyncValue<user_md.UserMd>?,
               Object?,
               Object?
             >;

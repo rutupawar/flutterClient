@@ -33,6 +33,7 @@ class AuthRemoteRepository {
           name: user?.displayName ?? 'No Name',
           email: user?.email ?? 'No Email',
           id: user?.uid ?? 'No ID',
+          token: (await user?.getIdToken()) ?? 'No Token',
         ),
       );
       //
@@ -61,6 +62,7 @@ class AuthRemoteRepository {
           name: name,
           email: userCredential.user?.email ?? 'No Email',
           id: userCredential.user?.uid ?? 'No ID',
+          token: (await userCredential.user?.getIdToken()) ?? 'No Token',
         ),
       );
     } on Exception catch (e) {
