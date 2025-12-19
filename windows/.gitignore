@@ -6,6 +6,9 @@ flutter/ephemeral/
 *.userosscache
 *.sln.docstates
 
+**/GeneratedPluginRegistrant.*
+**/generated_plugin_registrant.*
+
 # Visual Studio build-related files.
 x64/
 x86/
