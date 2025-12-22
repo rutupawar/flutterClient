@@ -1,4 +1,4 @@
-import 'package:client/features/auth/view/widgets/video_frame.dart';
+import 'package:client/features/view/widgets/video_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
@@ -18,9 +18,6 @@ class VideolistPage extends StatelessWidget {
             children: [
               Text('starts here'),
               VideoFrame(videoId: '3kaGC_DrUnw'),
-              VideoFrame(videoId: '3kaGC_DrUnw'),
-              // VideoFrame(videoId: '3kaGC_DrUnw'),
-              // VideoFrame(videoId: '3kaGC_DrUnw'),
               Text('ends here'),
             ],
           ),

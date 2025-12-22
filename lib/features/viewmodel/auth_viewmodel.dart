@@ -1,7 +1,7 @@
-import 'package:client/features/auth/model/user_md.dart' as user_md;
-import 'package:client/features/auth/repositories/auth_local_repository.dart'
+import 'package:client/features/model/user_md.dart' as user_md;
+import 'package:client/features/repositories/auth_local_repository.dart'
     as auth_local_repository;
-import 'package:client/features/auth/repositories/auth_remote_repository.dart'
+import 'package:client/features/repositories/auth_remote_repository.dart'
     as auth_remote_repository;
 import 'package:fpdart/fpdart.dart' as fp;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
