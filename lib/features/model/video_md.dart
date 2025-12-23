@@ -14,9 +14,9 @@ class VideoMeta {
   });
 
   factory VideoMeta.fromJson(Map<String, dynamic> json) {
-    final snippet = json['snippet'];
+    final snippet = json['snippet'] ?? json;
     return VideoMeta(
-      videoId: json['id'],
+      videoId: json['id'] ?? json['resourceId']['videoId'],
       title: snippet['title'],
       description: snippet['description'],
       thumbnailUrl: snippet['thumbnails']['medium']['url'],

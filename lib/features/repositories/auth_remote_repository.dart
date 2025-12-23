@@ -1,7 +1,7 @@
-import 'package:client/features/auth/model/failures/failure.dart';
+import 'package:client/features/model/failures/failure.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:fpdart/fpdart.dart' as fp;
-import 'package:client/features/auth/model/user_md.dart';
+import 'package:client/features/model/user_md.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'auth_remote_repository.g.dart';

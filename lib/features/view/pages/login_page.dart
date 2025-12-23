@@ -3,13 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' as riverpod;
 import 'package:client/core/theme/app_pallete.dart' as app_pallete;
 import 'package:client/core/utils.dart' as utils;
 import 'package:client/core/widgets/loader.dart' as loader;
-import 'package:client/features/auth/viewmodel/auth_viewmodel.dart'
+import 'package:client/features/viewmodel/auth_viewmodel.dart'
     as auth_viewmodel;
-import 'package:client/features/auth/view/widgets/custom_field.dart'
+import 'package:client/features/view/widgets/custom_field.dart'
     as custom_field;
-import 'package:client/features/auth/view/widgets/auth_gradient_btn.dart'
+import 'package:client/features/view/widgets/auth_gradient_btn.dart'
     as auth_gradient_btn;
-import 'package:client/features/auth/view/pages/signup_page.dart'
+import 'package:client/features/view/pages/signup_page.dart'
     as signup_page;
 
 class LoginPage extends riverpod.ConsumerStatefulWidget {

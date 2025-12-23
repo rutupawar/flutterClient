@@ -1,4 +1,4 @@
-import 'package:client/features/view/widgets/video_frame.dart';
+import 'package:client/features/view/widgets/videolist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 
@@ -14,10 +14,9 @@ class VideolistPage extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
-            // mainAxisSize: MainAxisSize.max,
             children: [
               Text('starts here'),
-              VideoFrame(videoId: '3kaGC_DrUnw'),
+              VideoList(playListId: 'PLafSq5UblCNWzrBiEOwBeIdoU8AFXfTqp'),
               Text('ends here'),
             ],
           ),
