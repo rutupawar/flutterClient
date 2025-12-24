@@ -1,6 +1,6 @@
 import 'package:client/features/model/course_md.dart';
 import 'package:flutter/material.dart';
-import 'package:client/features/view/widgets/banner.dart';
+import 'package:client/features/view/widgets/course_tile_banner.dart';
 
 class CourseTile extends StatelessWidget {
   const CourseTile({super.key, required this.course, this.onTap});

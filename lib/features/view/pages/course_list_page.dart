@@ -1,4 +1,4 @@
-import 'package:client/features/view/widgets/videolist.dart';
+import 'package:client/features/view/widgets/course_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 

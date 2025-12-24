@@ -44,7 +44,7 @@ class _LoginPageState extends riverpod.ConsumerState<LoginPage> {
         error: (error, st) {
           utils.showSnackBar(context, error.toString());
         },
-        loading: () {},
+        loading: () => const material.Center(child: material.CircularProgressIndicator()),
       );
     });
 
