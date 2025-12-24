@@ -1,17 +1,19 @@
 import 'package:client/features/model/course_md.dart';
+import 'package:client/features/view/widgets/video_list.dart';
 import 'package:flutter/material.dart';
 import 'package:client/features/view/widgets/course_tile_banner.dart';
 
 class CourseTile extends StatelessWidget {
-  const CourseTile({super.key, required this.course, this.onTap});
+  const CourseTile({super.key, required this.course});
 
   final Course course;
-  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => VideoList(playListId: course.id)));
+      },
       child: Card(
         elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

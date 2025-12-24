@@ -15,12 +15,27 @@ class VideoMeta {
 
   factory VideoMeta.fromJson(Map<String, dynamic> json) {
     final snippet = json['snippet'] ?? json;
+    
+    // Handle different API response formats
+    String videoId;
+    if (json['id'] is String) {
+      videoId = json['id'];
+    } else if (json['id'] is Map) {
+      videoId = json['id']['videoId'];
+    } else if (json['resourceId'] != null) {
+      videoId = json['resourceId']['videoId'];
+    } else if (snippet['resourceId'] != null) {
+      videoId = snippet['resourceId']['videoId'];
+    } else {
+      throw Exception('Unable to extract videoId from JSON');
+    }
+    
     return VideoMeta(
-      videoId: json['id'] ?? json['resourceId']['videoId'],
-      title: snippet['title'],
-      description: snippet['description'],
-      thumbnailUrl: snippet['thumbnails']['medium']['url'],
-      channelTitle: snippet['channelTitle'],
+      videoId: videoId,
+      title: snippet['title'] ?? '',
+      description: snippet['description'] ?? '',
+      thumbnailUrl: snippet['thumbnails']?['medium']?['url'] ?? '',
+      channelTitle: snippet['channelTitle'] ?? '',
     );
   }
 }

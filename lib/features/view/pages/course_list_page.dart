@@ -13,7 +13,7 @@ class CourseListPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            CourseList(playListId: 'PL1utRShoP_tzB0WTFP3Yc4-7b-e_bZHL5'),
+            CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
           ],
         ),
       ),

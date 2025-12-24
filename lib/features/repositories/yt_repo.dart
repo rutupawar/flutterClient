@@ -55,7 +55,7 @@ class YoutubeRepository {
     final body = jsonDecode(response.body);
     final items = body['items'] as List<dynamic>;
 
-    return items.map((item) => VideoMeta.fromJson(item['snippet'])).toList();
+    return items.map((item) => VideoMeta.fromJson(item)).toList();
   }
 
   Future<List<Course>> fetchPlaylistCourses(String playListId) async {
