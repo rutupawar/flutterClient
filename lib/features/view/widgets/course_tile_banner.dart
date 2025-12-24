@@ -1,9 +1,9 @@
 import 'package:client/features/model/course_md.dart';
 import 'package:flutter/material.dart';
 
-class Banner_ extends StatelessWidget {
+class CourseTileBanner extends StatelessWidget {
   // why we didnt pass super.key here?
-  const Banner_({required this.course});
+  const CourseTileBanner({required this.course});
 
   final Course course;
 

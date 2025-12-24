@@ -11,18 +11,18 @@ class CourseTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(16),
       onTap: onTap,
       child: Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        elevation: 10,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+
+        // this will clip the banner image to rounded corners. Its needed when provided rounded corners to the card
         clipBehavior: Clip.antiAlias,
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Banner_(course: course),
+            CourseTileBanner(course: course),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Text(

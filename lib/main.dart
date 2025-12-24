@@ -1,5 +1,5 @@
 import 'package:client/core/theme/theme.dart' as theme;
-import 'package:client/features/view/pages/videolist_page.dart';
+import 'package:client/features/view/pages/course_list_page.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:firebase_core/firebase_core.dart' as firebase_core;
 import 'package:flutter_riverpod/flutter_riverpod.dart' as flutter_riverpod;
@@ -22,7 +22,7 @@ class MyApp extends material.StatelessWidget {
     return material.MaterialApp(
       title: 'Flutter Demo',
       theme: theme.AppTheme.darkThemeMode,
-      home: VideolistPage(),
+      home: CourseListPage(),
     );
   }
 }

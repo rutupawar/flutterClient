@@ -59,17 +59,16 @@ class YoutubeRepository {
   }
 
   Future<List<Course>> fetchPlaylistCourses(String playListId) async {
-    final uri = Uri.https('www.googleapis.com', '/youtube/v3/playlistItems', {
+    final uri = Uri.https('www.googleapis.com', '/youtube/v3/playlists', {
       'part': 'snippet',
-      'playlistId': playListId,
-      'maxResults': '50',
+      'id': playListId,
       'key': _apiKey,
     });
 
     final response = await http.get(uri);
 
     if (response.statusCode != 200) {
-      throw Exception('Failed to load playlist courses');
+      throw Exception('Failed to load playlist metadata');
     }
 
     final body = jsonDecode(response.body);
@@ -78,7 +77,7 @@ class YoutubeRepository {
     return items.map((item) {
       final snippet = item['snippet'];
       return Course(
-        id: snippet['resourceId']['videoId'],
+        id: playListId,
         title: snippet['title'],
         description: snippet['description'],
         thumbnailUrl: snippet['thumbnails']['medium']['url'],

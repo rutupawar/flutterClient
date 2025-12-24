@@ -3,14 +3,13 @@ import 'package:client/features/viewmodel/playlist_video_md_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class VideoList extends ConsumerWidget{
-  const VideoList({super.key, required this.playListId});
+class CourseList extends ConsumerWidget {
+  const CourseList({super.key, required this.playListId});
 
   final String playListId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     final courseListAsync = ref.watch(playlistCourseVmProvider(playListId));
 
     return courseListAsync.when(
@@ -23,7 +22,10 @@ class VideoList extends ConsumerWidget{
           itemBuilder: (context, index) {
             final course = courseList[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 8.0,
+              ),
               child: CourseTile(course: course),
             );
           },
