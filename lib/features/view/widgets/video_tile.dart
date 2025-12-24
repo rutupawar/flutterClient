@@ -1,4 +1,4 @@
-import 'package:client/features/viewmodel/video_md_viewmodel.dart';
+import 'package:client/features/viewmodel/yt_md_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
