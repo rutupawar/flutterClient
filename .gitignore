@@ -12,6 +12,8 @@ flutter_export_environment.sh
 generated_plugin_registrant.dart
 **/GeneratedPluginRegistrant.*
 **/generated_plugin_registrant.*
+*.g.dart
+*.freezed.dart
 
 # Android
 android/.gradle/
