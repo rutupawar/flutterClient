@@ -83,3 +83,78 @@ final class PlaylistVideoMdVmFamily extends $Family
   @override
   String toString() => r'playlistVideoMdVmProvider';
 }
+
+@ProviderFor(playlistCourseVm)
+const playlistCourseVmProvider = PlaylistCourseVmFamily._();
+
+final class PlaylistCourseVmProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Course>>,
+          List<Course>,
+          FutureOr<List<Course>>
+        >
+    with $FutureModifier<List<Course>>, $FutureProvider<List<Course>> {
+  const PlaylistCourseVmProvider._({
+    required PlaylistCourseVmFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'playlistCourseVmProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$playlistCourseVmHash();
+
+  @override
+  String toString() {
+    return r'playlistCourseVmProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Course>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Course>> create(Ref ref) {
+    final argument = this.argument as String;
+    return playlistCourseVm(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is PlaylistCourseVmProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$playlistCourseVmHash() => r'7fbbdbdacd01b80f23f5ea249e494e70f9454506';
+
+final class PlaylistCourseVmFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<List<Course>>, String> {
+  const PlaylistCourseVmFamily._()
+    : super(
+        retry: null,
+        name: r'playlistCourseVmProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  PlaylistCourseVmProvider call(String playListId) =>
+      PlaylistCourseVmProvider._(argument: playListId, from: this);
+
+  @override
+  String toString() => r'playlistCourseVmProvider';
+}

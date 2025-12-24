@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:client/features/model/video_md.dart';
+import 'package:client/features/model/course_md.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -55,5 +56,33 @@ class YoutubeRepository {
     final items = body['items'] as List<dynamic>;
 
     return items.map((item) => VideoMeta.fromJson(item['snippet'])).toList();
+  }
+
+  Future<List<Course>> fetchPlaylistCourses(String playListId) async {
+    final uri = Uri.https('www.googleapis.com', '/youtube/v3/playlistItems', {
+      'part': 'snippet',
+      'playlistId': playListId,
+      'maxResults': '50',
+      'key': _apiKey,
+    });
+
+    final response = await http.get(uri);
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to load playlist courses');
+    }
+
+    final body = jsonDecode(response.body);
+    final items = body['items'] as List<dynamic>;
+
+    return items.map((item) {
+      final snippet = item['snippet'];
+      return Course(
+        id: snippet['resourceId']['videoId'],
+        title: snippet['title'],
+        description: snippet['description'],
+        thumbnailUrl: snippet['thumbnails']['medium']['url'],
+      );
+    }).toList();
   }
 }

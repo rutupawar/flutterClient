@@ -9,17 +9,14 @@ class VideolistPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return material.Scaffold(
       appBar: material.AppBar(title: const material.Text('Video List')),
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Text('starts here'),
-              VideoList(playListId: 'PLafSq5UblCNWzrBiEOwBeIdoU8AFXfTqp'),
-              Text('ends here'),
-            ],
-          ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Text('starts here'),
+            VideoList(playListId: 'PL1utRShoP_tzB0WTFP3Yc4-7b-e_bZHL5'),
+            Text('ends here'),
+          ],
         ),
       ),
     );
