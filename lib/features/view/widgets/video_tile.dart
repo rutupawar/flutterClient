@@ -8,7 +8,23 @@ class VideoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return Text(videoMeta.title);
+    return ListTile(
+      onTap: () {
+        
+      },
+      leading: Image.network(videoMeta.thumbnailUrl),
+      title: Text(
+        videoMeta.title,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
+      subtitle: Text(
+        videoMeta.description,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
+    );
   }
 }

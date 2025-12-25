@@ -55,7 +55,20 @@ class YoutubeRepository {
     final body = jsonDecode(response.body);
     final items = body['items'] as List<dynamic>;
 
-    return items.map((item) => VideoMeta.fromJson(item)).toList();
+    return items
+        .map((item) {
+          try {
+            return VideoMeta.fromJson(item);
+          } catch (e) {
+            return null;
+          }
+        })
+        .where(
+          /*Check video is not a 'Deleted Video'*/
+          (video) => video != null && video.thumbnailUrl.isNotEmpty,
+        )
+        .cast<VideoMeta>()
+        .toList();
   }
 
   Future<List<Course>> fetchPlaylistCourses(String playListId) async {

@@ -11,8 +11,13 @@ class CourseTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => VideoList(playListId: course.id)));
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => VideoList(playListId: course.id),
+          ),
+        );
       },
       child: Card(
         elevation: 10,
