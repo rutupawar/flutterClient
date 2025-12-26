@@ -9,13 +9,17 @@ class CourseListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return material.Scaffold(
       appBar: material.AppBar(title: const material.Text('Course List')),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
-          ],
-        ),
+      body: ListView(
+        children: [
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+          CourseList(playListId: 'PL1utRShoP_twtWi_uGZvdVay7qmJ6p1WS'),
+        ],
       ),
     );
   }

@@ -18,7 +18,7 @@ class VideoMeta {
     
     // Handle different API response formats
     String videoId;
-    if (json['id'] is String) {
+    if (snippet['id'] is String) {
       videoId = json['id'];
     } else if (json['id'] is Map) {
       videoId = json['id']['videoId'];
@@ -31,7 +31,9 @@ class VideoMeta {
     }
     
     return VideoMeta(
-      videoId: videoId,
+      videoId: snippet['resourceId'] != null
+          ? snippet['resourceId']['videoId']
+          : videoId,
       title: snippet['title'] ?? '',
       description: snippet['description'] ?? '',
       thumbnailUrl: snippet['thumbnails']?['medium']?['url'] ?? '',
